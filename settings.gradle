@@ -1,2 +1,8 @@
+pluginManagement {
+    repositories {
+        maven{ url "https://cache-redirector.jetbrains.com/plugins.gradle.org"}
+        maven{ url "https://cache-redirector.jetbrains.com/packages.jetbrains.team/maven/p/intellij-plugin-verifier/intellij-plugin-structure"}
+    }
+}
 rootProject.name = 'leeks'
 

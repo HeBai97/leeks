@@ -85,6 +85,13 @@ public class TencentStockHandler extends StockRefreshHandler {
             bean.setTime(values[30]);
             bean.setMax(values[33]);//33
             bean.setMin(values[34]);//34
+            bean.setVolume(values[6]);
+            bean.setTurnover(values[37] + "万");
+            bean.setTurnOverRate(values[38] + "%");
+            bean.setBuyOne(values[10]);
+            bean.setSellOne(values[20]);
+            bean.setInsider(values[8]);
+            bean.setOutSider(values[7]);
 
             BigDecimal now = new BigDecimal(values[3]);
             String costPriceStr = bean.getCostPrise();
@@ -94,18 +101,14 @@ public class TencentStockHandler extends StockRefreshHandler {
                 if (costPriceDec.compareTo(BigDecimal.ZERO) <= 0) {
                     bean.setIncomePercent("0");
                 } else {
-                    BigDecimal incomePercentDec = incomeDiff.divide(costPriceDec, 5, RoundingMode.HALF_UP)
-                            .multiply(BigDecimal.TEN)
-                            .multiply(BigDecimal.TEN)
-                            .setScale(3, RoundingMode.HALF_UP);
+                    BigDecimal incomePercentDec = incomeDiff.divide(costPriceDec, 5, RoundingMode.HALF_UP).multiply(BigDecimal.TEN).multiply(BigDecimal.TEN).setScale(3, RoundingMode.HALF_UP);
                     bean.setIncomePercent(incomePercentDec.toString());
                 }
 
                 String bondStr = bean.getBonds();
                 if (StringUtils.isNotEmpty(bondStr)) {
                     BigDecimal bondDec = new BigDecimal(bondStr);
-                    BigDecimal incomeDec = incomeDiff.multiply(bondDec)
-                            .setScale(2, RoundingMode.HALF_UP);
+                    BigDecimal incomeDec = incomeDiff.multiply(bondDec).setScale(2, RoundingMode.HALF_UP);
                     bean.setIncome(incomeDec.toString());
                 }
             }

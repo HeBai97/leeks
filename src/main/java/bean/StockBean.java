@@ -15,17 +15,16 @@ public class StockBean {
     private String change;//涨跌
     private String changePercent;
     private String time;
-    /**
-     * 最高价
-     */
-    private String max;
-    /**
-     * 最低价
-     */
-    private String min;
-
+    private String max;//最高价
+    private String volume;//成交量
+    private String turnover;//成交额
+    private String turnOverRate;// 换手率
+    private String buyOne;//买一价
+    private String sellOne;//卖一价
+    private String insider;//内盘
+    private String outSider;//外盘
+    private String min;//最低价
     private String costPrise;//成本价
-//    private String cost;//成本
     private String bonds;//持仓
     private String incomePercent;//收益率
     private String income;//收益
@@ -147,14 +146,6 @@ public class StockBean {
         this.bonds = bonds;
     }
 
-    //    public String getCost() {
-//        return cost;
-//    }
-//
-//    public void setCost(String cost) {
-//        this.cost = cost;
-//    }
-
     public String getIncomePercent() {
         return incomePercent;
     }
@@ -169,6 +160,63 @@ public class StockBean {
 
     public void setIncome(String income) {
         this.income = income;
+    }
+
+
+    public String getVolume() {
+        return volume;
+    }
+
+    public void setVolume(String volume) {
+        this.volume = volume;
+    }
+
+    public String getTurnover() {
+        return turnover;
+    }
+
+    public void setTurnover(String turnover) {
+        this.turnover = turnover;
+    }
+
+    public String getTurnOverRate() {
+        return turnOverRate;
+    }
+
+    public void setTurnOverRate(String turnOverRate) {
+        this.turnOverRate = turnOverRate;
+    }
+
+    public String getBuyOne() {
+        return buyOne;
+    }
+
+    public void setBuyOne(String buyOne) {
+        this.buyOne = buyOne;
+    }
+
+    public String getSellOne() {
+        return sellOne;
+    }
+
+    public void setSellOne(String sellOne) {
+        this.sellOne = sellOne;
+    }
+
+    public String getInsider() {
+        return insider;
+    }
+
+    public void setInsider(String insider) {
+        this.insider = insider;
+    }
+
+    public String getOutSider() {
+        return outSider;
+    }
+
+    public void setOutSider(String outSider) {
+        this.outSider = outSider;
     }
 
     @Override
@@ -230,6 +278,20 @@ public class StockBean {
                     timeStr = this.getTime().substring(8);
                 }
                 return timeStr;
+            case "成交量":
+                return this.getVolume();
+            case "成交额":
+                return this.getTurnover();
+            case "换手率":
+                return this.getTurnOverRate();
+            case "买一价":
+                return this.getBuyOne();
+            case "卖一价":
+                return this.getSellOne();
+            case "内盘":
+                return this.getInsider();
+            case "外盘":
+                return this.getOutSider();
             default:
                 return "";
 
