@@ -19,8 +19,8 @@ public class StockBean {
     private String volume;//成交量
     private String turnover;//成交额
     private String turnOverRate;// 换手率
-    private String buyOne;//买一价
-    private String sellOne;//卖一价
+    private String buyOne;//买一
+    private String sellOne;//卖一
     private String insider;//内盘
     private String outSider;//外盘
     private String min;//最低价
@@ -284,9 +284,9 @@ public class StockBean {
                 return this.getTurnover();
             case "换手率":
                 return this.getTurnOverRate();
-            case "买一价":
+            case "买一":
                 return this.getBuyOne();
-            case "卖一价":
+            case "卖一":
                 return this.getSellOne();
             case "内盘":
                 return this.getInsider();
