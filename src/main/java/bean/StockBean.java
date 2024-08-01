@@ -16,6 +16,7 @@ public class StockBean {
     private String changePercent;
     private String time;
     private String max;//最高价
+    private String lastPrice;//昨日收盘价
     private String volume;//成交量
     private String turnover;//成交额
     private String turnOverRate;// 换手率
@@ -28,6 +29,7 @@ public class StockBean {
     private String bonds;//持仓
     private String incomePercent;//收益率
     private String income;//收益
+    private String ttm;//市盈率
 
     public StockBean() {
     }
@@ -136,6 +138,23 @@ public class StockBean {
 
     public void setCostPrise(String costPrise) {
         this.costPrise = costPrise;
+    }
+
+
+    public String getLastPrice() {
+        return lastPrice;
+    }
+
+    public void setLastPrice(String lastPrice) {
+        this.lastPrice = lastPrice;
+    }
+
+    public String getTtm() {
+        return ttm;
+    }
+
+    public void setTtm(String ttm) {
+        this.ttm = ttm;
     }
 
     public String getBonds() {
@@ -292,6 +311,10 @@ public class StockBean {
                 return this.getInsider();
             case "外盘":
                 return this.getOutSider();
+            case "昨收":
+                return this.getLastPrice();
+            case "市盈率":
+                return this.getTtm();
             default:
                 return "";
 
