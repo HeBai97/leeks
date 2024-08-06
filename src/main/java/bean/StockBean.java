@@ -29,6 +29,8 @@ public class StockBean {
     private String incomePercent;//收益率
     private String income;//收益
     private String ttm;//市盈率
+    private String marketValue;//总市值
+    private String circulationMarketValue;//流通市值
 
     public StockBean() {
     }
@@ -228,6 +230,22 @@ public class StockBean {
         this.outSider = outSider;
     }
 
+    public String getMarketValue() {
+        return marketValue;
+    }
+
+    public void setMarketValue(String marketValue) {
+        this.marketValue = marketValue;
+    }
+
+    public String getCirculationMarketValue() {
+        return circulationMarketValue;
+    }
+
+    public void setCirculationMarketValue(String circulationMarketValue) {
+        this.circulationMarketValue = circulationMarketValue;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -303,6 +321,10 @@ public class StockBean {
                 return this.getOutSider();
             case "市盈率":
                 return this.getTtm();
+            case "总市值":
+                return this.getMarketValue();
+            case "流通市值":
+                return this.getCirculationMarketValue();
             default:
                 return "";
 

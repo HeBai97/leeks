@@ -93,6 +93,8 @@ public class TencentStockHandler extends StockRefreshHandler {
             bean.setInsider(values[8]);
             bean.setOutSider(values[7]);
             bean.setTtm(values[39]);
+            bean.setCirculationMarketValue(values[44]);
+            bean.setTtm(values[45]);
 
             BigDecimal now = new BigDecimal(values[3]);
             String costPriceStr = bean.getCostPrise();
